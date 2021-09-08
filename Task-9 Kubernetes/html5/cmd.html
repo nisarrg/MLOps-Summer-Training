@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Cmds
+        </title>
+    </head>
+
+    <script>
+        function o(cmd){
+            var c = cmd;
+            xhr = new XMLHttpRequest();
+            xhr.open('GET','http://192.168.43.73/cgi-bin/cmd.py?n='+c,'true');
+            xhr.send();
+            xhr.onload=function (){
+                output = xhr.responseText;
+                output = output ;
+                document.getElementById("op").innerHTML = output;
+            }
+
+
+        }
+
+        function buttona(){
+            document.getElementById("1").style.fontSize="130%"
+        }
+        function button1(){
+            document.getElementById("1").style.fontSize="110%";
+       }
+
+
+       function buttonb(){
+            document.getElementById("2").style.fontSize="130%"
+        }
+        function button2(){
+            document.getElementById("2").style.fontSize="110%";
+        }
+
+function buttonc(){
+     document.getElementById("3").style.fontSize="130%"
+ }
+ function button3(){
+     document.getElementById("3").style.fontSize="110%";
+}
+
+
+function buttond(){
+     document.getElementById("4").style.fontSize="130%"
+ }
+ function button4(){
+     document.getElementById("4").style.fontSize="110%";
+}
+
+
+function buttone(){
+     document.getElementById("5").style.fontSize="130%"
+ }
+ function button5(){
+     document.getElementById("5").style.fontSize="110%";
+}
+
+
+function buttonf(){
+    document.getElementById("6").style.fontSize="130%"
+        }
+        function button6(){
+            document.getElementById("6").style.fontSize="110%";
+       }
+
+
+       function buttong(){
+            document.getElementById("7").style.fontSize="130%"
+        }
+        function button7(){
+            document.getElementById("7").style.fontSize="110%";
+       }
+
+
+
+    </script>
+
+    <body style="background-color: #04d7fc;">
+        <marquee style="box-sizing: content-box;background-color: rgb(216, 148, 60);width: 97%;border: brown solid 3px;border-radius: 10%;"><div style="font-family: 'Courier New', Courier, monospace;font-size: 22px;"><b>K-Cloud(GUI for Kubernetes): Cmds</b></div></marquee>
+        <br><br>
+        <!--Input-->
+        <div id="base" style="width:px;">
+            <div style="background-color: rgb(255, 216, 42); width:45%; float:left;border: black solid 3px;height: 540px;position: relative;left: 2%; top: 7%;">
+                <div style="background-color: rgb(46, 150, 46);position: relative;width: 90%;text-align: center;left: 4.6%;top: 3px;border-radius: 14%;border: rgb(0, 1, 5) solid 5px; font-family: 'Courier New', Courier, monospace;font-size: 500%;text-align: center;"><b><u>Click & get Output</u></b>:</div>
+                <hr style="height:4px;border-width:70%;color: black;background-color:black;">
+                <br>
+            <div style="font-family: 'Courier New', Courier, monospace;font-size: 160%;text-align: left;">
+                <ul>
+                    <li id="1" onclick="o(this.innerHTML);" onmouseover="buttona();" onmouseout="button1();" style="font-size: 110%;">kubectl get pods</li>
+                    <li id="2" onclick="o(this.innerHTML);" onmouseover="buttonb();" onmouseout="button2();" style="font-size: 110%;">kubectl get svc</li>
+                    <li id="3" onclick="o(this.innerHTML);" onmouseover="buttonc();" onmouseout="button3();" style="font-size: 110%;">kubectl get deployments</li>
+                    <li id="4" onclick="o(this.innerHTML);" onmouseover="buttond();" onmouseout="button4();" style="font-size: 110%;">kubectl get ns</li>
+                    <li id="5" onclick="o(this.innerHTML);" onmouseover="buttone();" onmouseout="button5();" style="font-size: 110%;">kubectl delete all --all</li>
+                    <li id="6" onclick="o(this.innerHTML);" onmouseover="buttonf();" onmouseout="button6();" style="font-size: 110%;">kubectl get pv</li>
+                    <li id="7" onclick="o(this.innerHTML);" onmouseover="buttong();" onmouseout="button7();" style="font-size: 110%;">kubectl get pvc</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Output-->
+        <div style="background-color: rgb(255, 216, 42); width:45%; float:right;border: black solid 3px; height: 540px;position: relative;right: 2%; top: 7%;">
+            <div style="background-color: rgb(46, 150, 46);position: relative;width: 70%;text-align: center;left: 15%;top: 3px;border-radius: 14%;border: rgb(0, 1, 5) solid 5px; font-family: 'Courier New', Courier, monospace;font-size: 500%;text-align: center;"><b><u>Output</u></b>:</div>
+            <hr style="height:4px;border-width:70%;color: black;background-color:black;">
+            <div style="font-family: 'Courier New', Courier, monospace;font-size: 160%;text-align: left;position: relative;float: left;width: 70%;text-align: center;"><b><u>Your Customized Cmds</u> : </b></div>
+	    <input  onkeyup="o(this.value);" id="in1" type="text" style="border: black solid 2px;position: relative;right: 5%;height: 5%; float: right;font-family: 'Courier New', Courier, monospace;font-size: 115%"/>
+	    <br><br>
+            <div id="pod" style="border: black solid 5px; border-radius: 10%;height: 65%;width: 95%;position: relative;left: 2%;font-family: 'Courier New', Courier, monospace;font-size: 120%;text-align:center;background-color: rgba(0, 0, 0, 0.829);color:azure;">
+                <pre>
+		    <div id="op" style="font-family: 'Courier New', Courier, monospace;font-size: 90%;color: azure;"><i>Output</i></div>
+                </pre>
+            </div>
+	</div>
+	</div>
+	<br/><br>
+	
+<marquee  direction = "right" style="box-sizing: content-box;background-color: rgb(216, 148, 60);width: 97%;border: brown solid 3px;border-radius: 10%;"><div style="font-family: 'Courier New', Courier, monospace;font-size: 22px;"><b>K-Cloud(GUI for Kubernetes): Cmds</b></div></marquee>
+
+</body>
+</html>
+  

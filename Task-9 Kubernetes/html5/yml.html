@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            YAML_File
+        </title>
+    </head>
+
+    <style>
+        div#base{
+            position: relative;
+            text-align: center;
+            border: black solid 4px;
+            top: 10px;
+            bottom: 10px;
+            right: 10px;
+            left: 10px;
+            width: 96%;
+            height: 640px;
+        }
+        div#box1{
+            background-color:aqua;
+            border-radius: 30%;
+        }
+        div#box2{
+            border-radius: 30%;
+            background-color:aqua;
+        }
+    </style>
+
+    <script>
+	function Submit(){
+            file = document.getElementById("myfile").value;
+            xhr = new XMLHttpRequest();
+            xhr.open('GET','http://192.168.43.73/cgi-bin/file.py?i='+file,'true');
+            xhr.send();
+            xhr.onload=function (){
+                output = xhr.responseText;
+                output = output ;
+                document.getElementById("output").innerHTML = output;
+            }
+        }
+        function button(){
+            document.getElementById("submit").style.width="80%";
+            document.getElementById("submit").style.height="23%";
+        }
+        function button1(){
+            document.getElementById("submit").style.width="70%";
+            document.getElementById("submit").style.height="20%";
+        }
+    </script>
+
+    <body style="background-color: #fce093;">
+        <marquee style="box-sizing: content-box;background-color: rgb(216, 148, 60);width: 97%;border: brown solid 3px;border-radius: 10%;"><div style="font-family: 'Courier New', Courier, monospace;font-size: 22px;"><b>K-Cloud(GUI for Kubernetes): YAML_File</b></div></marquee>
+        <br><br>
+        <!--Input-->
+        <div id="base" style="width:px;">
+            <div style="background-color: lightseagreen; width:45%; float:left;border: black solid 3px;height: 540px;position: relative;left: 2%; top: 7%;">
+                <div style="background-color: hotpink;position: relative;width: 90%;text-align: center;left: 4.6%;top: 3px;border-radius: 14%;border: indigo solid 5px; font-family: 'Courier New', Courier, monospace;font-size: 500%;text-align: center;"><b><u>Select your File:</u></b>:</div>
+                <hr style="height:4px;border-width:70%;color: black;background-color:black;">
+                <br>
+		<b><em  style="font-family: 'Courier New', Courier, monospace;font-size: 130%;">Provide url of file: </em></b>
+		<br>
+                <input type="text" id="myfile"   style="border:solid black solid 10px ;height: 50px;width: 218px;font-family: 'Courier New', Courier, monospace;font-size: 100%;font-weight: bolder;">
+                <br>
+                <br>
+		<div style="font-family: 'Courier New', Courier, monospace;font-size: 140%;"><b>**Note: Yout YAML file syntax should be correct**</b></div>
+                <br>
+                <br>
+
+                <input onmouseover="button();" onmouseout="button1();" onclick="Submit();" id="submit" type="image" src="f1.png" alt="Submit" width="70%" height="20%" style="border-radius: 30%;border: black solid 6px;">
+            </div>
+
+            <!--Output-->
+            <div style="background-color: lightseagreen; width:45%; float:right;border: black solid 3px; height: 540px;position: relative;right: 2%; top: 7%;">
+                <div style="background-color: hotpink;position: relative;width: 70%;text-align: center;left: 15%;top: 3px;border-radius: 14%;border: indigo solid 5px; font-family: 'Courier New', Courier, monospace;font-size: 500%;text-align: center;"><b><u>Output</u></b>:</div>
+                <hr style="height:4px;border-width:70%;color: black;background-color:black;">
+                <br><br>
+                <div  id="pod" style="border: black solid 5px; border-radius: 10%;height: 64%;width: 85%;position: relative;left: 7%;font-family: 'Courier New', Courier, monospace;font-size: 120%;text-align:center;background-color: rgba(0, 0, 0, 0.829);color:azure;">
+                    <pre>
+                        <div id="output" style="position: relative;text-align: left;box-sizing: border-box;width: 50%; "></div>
+                    </pre>
+                </div>       
+            </div>
+        </div>
+    <br><br>
+    <marquee  direction = "right" style="box-sizing: content-box;background-color: rgb(216, 148, 60);width: 97%;border: brown solid 3px;border-radius: 10%;"><div style="font-family: 'Courier New', Courier, monospace;font-size: 22px;"><b>K-Cloud(GUI for Kubernetes): YAML_File</b></div></marquee>
+        
+    </body>
+</html>

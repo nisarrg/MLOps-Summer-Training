@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            K-Cloud
+        </title>
+    </head>
+    <style>
+        div#base{
+            position: relative;
+            text-align: center;
+            border: black solid 4px;
+            top: 10px;
+            bottom: 10px;
+            right: 10px;
+            left: 10px;
+            width: 96%;
+            height: 640px;
+        }
+        div#box1{
+            position: relative;
+            border: black solid 9px;
+            top: 10px;
+            bottom: 10px;
+            left: 16%;
+            width: 80%;
+            border-radius: 20%;
+            height: 100%;
+            background-color:aqua;
+            box-sizing: border-box;
+        }
+        div#box2{
+            position: relative;
+            border: black solid 9px;
+            top: 10px;
+            bottom: 10px;
+            left: 16%;
+            width: 80%;
+            border-radius: 20%;
+            height: 100%;
+            background-color:aqua;
+            box-sizing: border-box;
+        }
+    </style>
+    
+    <script>
+        function exit1(){
+            document.getElementById("box1").style.backgroundColor = "aqua";
+        }
+        function exit2(){
+            document.getElementById("box2").style.backgroundColor = "aqua";
+        }
+
+        function hover1(){
+            document.getElementById("box1").style.backgroundColor = "yellow";
+        }
+        function hover2(){
+            document.getElementById("box2").style.backgroundColor = "yellow";
+        }
+
+        function deploy(){
+            document.getElementById("box1").style.backgroundColor = "lightblue";
+            document.location="yml.html"
+       }
+       function cmd(){
+            document.getElementById("box2").style.backgroundColor = "lightblue";
+            document.location="cmd.html"
+       }
+    </script>
+
+    <body style="background-color: #fce093;">
+        <marquee style="box-sizing: content-box;background-color: rgb(216, 148, 60);width: 97%;border: brown solid 3px;border-radius: 10%;"><div style="font-family: 'Courier New', Courier, monospace;font-size: 22px;"><b>K-Cloud(GUI for Kubernetes): HOME</b></div></marquee>
+        
+        <div id="base" style="background-color: rgb(102, 255, 102);">
+            <div style="font-size: 500%;font-family: 'Courier New', Courier, monospace;background:rgb(1, 90, 255);position: relative;width: 98%;align-self: center;left: 10px;top: 10px;border: rgb(255, 238, 0) solid 5px;"><b>Section:- <u>Home</u></b></div>
+            <br>
+            <hr style="height:4px;border-width:70%;color: black;background-color:black;">
+            <br>
+            <div style="width: 90%;border:black;">
+		    <br><br><br>
+                <div onclick="deploy();" onmouseover="hover1();" onmouseout="exit1();" id="box1" name="deploy" style="text-align: center;font-family: 'Courier New', Courier, monospace;font-size: 600%;"><u>Upload YAML File</u></div>
+		<br><br><br><br><br>
+                <div onclick="cmd();" id="box2" onmouseover="hover2();" onmouseout="exit2();" style="text-align: center;font-family: 'Courier New', Courier, monospace;font-size: 600%;"><u>Commands</u></div>
+                <br>
+            </div>
+            
+        </div>
+        <br>
+        <marquee  direction = "right" style="box-sizing: content-box;background-color: rgb(216, 148, 60);width: 97%;border: brown solid 3px;border-radius: 10%;"><div style="font-family: 'Courier New', Courier, monospace;font-size: 22px;"><b>K-Cloud(GUI for Kubernetes): HOME</b></div></marquee>
+    </body>
+</html>
